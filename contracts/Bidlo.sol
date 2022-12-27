@@ -15,7 +15,7 @@ contract Bidlo {
         _bidloOwner = owner;
     }
 
-    function createStorageRequest(uint256 size, uint256 calldata amount) public payable {
+    function createStorageRequest(uint256 size, uint256 amount) public payable {
         storageRequests.push(
             StorageRequest({owner: msg.sender, isOwnerStaked: false, ownerStakeAmount: 10})
         );
