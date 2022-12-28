@@ -17,7 +17,6 @@ async function callRpc(method, params) {
     var options = {
         method: "POST",
         url: "https://wallaby.node.glif.io/rpc/v0",
-        // url: "http://localhost:1234/rpc/v0",
         headers: {
             "Content-Type": "application/json",
         },
@@ -38,7 +37,7 @@ module.exports = async ({ deployments }) => {
     const { deploy } = deployments
 
     const priorityFee = await callRpc("eth_maxPriorityFeePerGas")
-    
+
     // Wraps Hardhat's deploy, logging errors to console.
     const deployLogError = async (title, obj) => {
         let ret;
@@ -59,7 +58,6 @@ module.exports = async ({ deployments }) => {
     await deployLogError("SimpleCoin", {
         from: deployer.address,
         args: [tokenToBeMinted],
-        // maxPriorityFeePerGas to instruct hardhat to use EIP-1559 tx format
         maxPriorityFeePerGas: priorityFee,
         log: true,
     })
