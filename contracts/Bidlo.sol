@@ -74,7 +74,11 @@ contract Bidlo {
         requests[requestIndex].cid = cid;
     }
 
-    function confirmStorageProvisionAndVerifyDeal() public {}
+    function confirmStorageProvisionAndVerifyDeal() public {
+        // TODO: Implement the confimration
+    }
 
-    function completeDeal() public {}
+    function completeDeal() public {
+        // TODO: Implement the completion 
+    }
 }
