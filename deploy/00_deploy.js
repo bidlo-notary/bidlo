@@ -14,6 +14,7 @@ function hexToBytes(hex) {
 }
 
 async function callRpc(method, params) {
+    console.log("CALLING RPC")
     var options = {
         method: "POST",
         url: "https://wallaby.node.glif.io/rpc/v0",
@@ -27,6 +28,9 @@ async function callRpc(method, params) {
             id: 1,
         }),
     }
+
+    console.log(res)
+
     const res = await request(options)
     return JSON.parse(res.body).result
 }
@@ -40,14 +44,14 @@ module.exports = async ({ deployments }) => {
 
     // Wraps Hardhat's deploy, logging errors to console.
     const deployLogError = async (title, obj) => {
-        let ret;
+        let ret
         try {
-            ret = await deploy(title, obj);
+            ret = await deploy(title, obj)
         } catch (error) {
             console.log(error.toString())
             process.exit(1)
         }
-        return ret;
+        return ret
     }
 
     console.log("Wallet Ethereum Address:", deployer.address)
