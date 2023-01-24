@@ -10,6 +10,7 @@ const DEPLOYER_PRIVATE_KEY = network.config.accounts[0]
 
 function hexToBytes(hex) {
     for (var bytes = [], c = 0; c < hex.length; c += 2) bytes.push(parseInt(hex.substr(c, 2), 16))
+    console.log(bytes)
     return new Uint8Array(bytes)
 }
 

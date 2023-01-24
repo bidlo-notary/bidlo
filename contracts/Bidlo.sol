@@ -75,7 +75,10 @@ contract Bidlo {
     }
 
     function confirmStorageProvisionAndVerifyDeal() public {
-        // TODO: Implement the confimration
+        require(bid.active, "Inactive Bid called");
+        requests[requestIndex].selectedBidder = msg.sender;
+        requests[requestIndex].state = 2;
+        requests[requestIndex].cid = cid;
     }
 
     function completeDeal() public {
