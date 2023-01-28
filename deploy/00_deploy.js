@@ -71,7 +71,6 @@ module.exports = async ({ deployments }) => {
     await deployLogError("MinerAPI", {
         from: deployer.address,
         args: [0x0000001],
-        // maxPriorityFeePerGas to instruct hardhat to use EIP-1559 tx format
         maxPriorityFeePerGas: priorityFee,
         log: true,
     })
@@ -80,7 +79,6 @@ module.exports = async ({ deployments }) => {
     await deployLogError("MarketAPI", {
         from: deployer.address,
         args: [],
-        // maxPriorityFeePerGas to instruct hardhat to use EIP-1559 tx format
         maxPriorityFeePerGas: priorityFee,
         log: true,
     })
