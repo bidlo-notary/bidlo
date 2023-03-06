@@ -15,7 +15,6 @@ function hexToBytes(hex) {
 }
 
 async function callRpc(method, params) {
-    console.log("CALLING RPC")
     var options = {
         method: "POST",
         url: "https://wallaby.node.glif.io/rpc/v0",
